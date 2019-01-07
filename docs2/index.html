@@ -15,7 +15,7 @@
       repo: 'https://github.com/JiaYifan/JiaYifan.github.io',
       // basePath: '/docs/',
       name: 'JiaYifan\'s Knowledge Warehouse', // 文档标题，会显示在侧边栏顶部
-      loadSidebar: true,
+      loadSidebar: 'side_bar',
       subMaxLevel: 2,
       search: 'auto', // 默认值
       executeScript: true, // 执行文档里的 script 标签里的脚本
@@ -31,7 +31,7 @@
         // '/zh-cn/changelog': '/changelog',
         // '/changelog':
         //   'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG',
-        '/.*/_sidebar.md': '/_sidebar.md', // See #301
+        '/.*/side_bar.md': '/side_bar.md', // See #301
       }
     }
   </script>
