@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <div id="div1" style="background-color: red;width: 0;height: 20px;line-height: 20px;">0%</div>
+    <button id="btn1">setInterval</button>
+    <div id="div2" style="background-color: yellow;width: 0;height: 20px;line-height: 20px;">0%</div>
+    <button id="btn2">setTimeout</button>
+    <div id="div3" style="background-color: green;width: 0;height: 20px;line-height: 20px;">0%</div>
+    <button id="btn3">requestAnimationFrame</button>
+    <br>
+    <br>
+    <button id="btn4">一起跑</button>
+
+    <script type="text/javascript">
+    var timer1, timer2, timer3;
+    var div1 = document.getElementById('div1')
+    var div2 = document.getElementById('div2')
+    var div3 = document.getElementById('div3')
+    var btn1 = document.getElementById('btn1')
+    var btn2 = document.getElementById('btn2')
+    var btn3 = document.getElementById('btn3')
+    btn1.onclick = function(){
+        clearInterval(timer1);
+        div1.style.width = '0';
+        timer1 = setInterval(function(){
+            if(parseInt(div1.style.width) < 500){
+                div1.style.width = parseInt(div1.style.width) + 5 + 'px';
+                div1.innerHTML = parseInt(div1.style.width)/5 + '%';    
+            }else{
+                clearInterval(timer1);
+            }        
+        },16);
+    }
+    btn2.onclick = function(){
+        clearTimeout(timer2);
+        div2.style.width = '0';
+        timer2 = setTimeout(function fn(){
+            if(parseInt(div2.style.width) < 500){
+                div2.style.width = parseInt(div2.style.width) + 5 + 'px';
+                div2.innerHTML = parseInt(div2.style.width)/5 + '%';
+                timer2 = setTimeout(fn,16);
+            }else{
+                clearTimeout(timer2);
+            }    
+        },16);
+    }
+    btn3.onclick = function(){
+        div3.style.width = '0';
+        cancelAnimationFrame(timer3);
+        timer3 = requestAnimationFrame(function fn(){
+            if(parseInt(div3.style.width) < 500){
+                div3.style.width = parseInt(div3.style.width) + 5 + 'px';
+                div3.innerHTML = parseInt(div3.style.width)/5 + '%';
+                timer3 = requestAnimationFrame(fn);
+            }else{
+                cancelAnimationFrame(timer3);
+            }    
+        });
+    }
+    var btn4 = document.getElementById('btn4')
+    btn4.onclick = function () {
+        var myEvent = new Event('click');
+        btn1.dispatchEvent(myEvent);
+        btn2.dispatchEvent(myEvent);
+        btn3.dispatchEvent(myEvent);
+    }
+    </script>
+</body>
+</html>
