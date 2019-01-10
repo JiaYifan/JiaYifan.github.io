@@ -1,5 +1,5 @@
 # [JavaScript回调函数](https://www.cnblogs.com/gaosheng-221/p/6045483.html)
-本文译自[understand Javascript callback functions and use them](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
+> 转自[understand Javascript callback functions and use them](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
 
 In JavaScript, functions are first-class objects; that is, functions are of the type Object and they can be used in a first-class *manner like* 类似 any other object (String, Array, Number, etc.) since they are in fact objects themselves. They can be “stored in variables, passed as arguments to functions, created within functions, and returned from functions `functions are first-class objects 所以可以被当成对象处理`
 
@@ -11,7 +11,7 @@ Fortunately, the techniques of functional programming have been *elucidated* 阐
 
 ## What is a Callback or *Higher-order Function* 高阶函数?
 
-A callback function, also known as a higher-order function, is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. A callback function is essentially a *pattern* 编程模式 (an established solution to a common problem), and therefore, the use of a callback function is also known as a *callback pattern* 回调模式. `什么是回调函数`
+A callback function, also known as a higher-order function, is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. A callback function is essentially a *pattern* 编程模式 (an established solution to a common problem), and therefore, the use of a callback function is also known as a *callback pattern* 回调模式. `定义：一个回调函数，也被称为高阶函数，是一个被作为参数传递给另一个函数，并在某一时刻被这个函数调用的函数`
 
 Consider this common use of a callback function in jQuery:
 
