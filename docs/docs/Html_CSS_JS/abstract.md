@@ -5,12 +5,15 @@
     * 瀑布流
 * JS
     * 基础
+      * 对象基础 
+        * [Object basics](/JS/Object_basics.md)
+        * [Object-oriented JavaScript](/JS/Object-oriented_JavaScript.md)
+        * [Object prototypes](/JS/Object_prototypes.md)
+        * [Inheritance in JavaScript](/JS/Inheritance.md)
         * [原始类型](/JS/Primitive.md)
-        * [原型链](/JS/prototype.md)
         * [变量作用域](/JS/变量作用域.md)
         * [apply和call](/JS/apply和call.md)
-    * 类 
-        * [继承](/JS/继承.md)
+      * 函数的几种写法
     * 设计模式
         * [闭包](/JS/闭包.md)
         * [回调函数](/JS/callback.md)
