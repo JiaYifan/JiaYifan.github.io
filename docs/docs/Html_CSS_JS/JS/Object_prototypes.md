@@ -11,6 +11,7 @@
 * 这些继承的属性和方法定义在Object的构造器函数(constructor functions)之上的prototype属性上，而非对象实例本身。
 * `__proto__`是作为对象实例和它的构造器之间**链接**
 * 对象实例 的 `__proto__` 属性就是`构造器函数.prototype`
+* `Person===Person.prototype.constructor`
 
 通过原型这种机制，JavaScript 中的对象从其他对象继承功能特性；这种继承机制与经典的面向对象编程语言的继承机制不同。本文将探讨这些差别，解释原型链如何工作，并了解如何通过 `prototype` 属性向已有的构造器添加方法
 
