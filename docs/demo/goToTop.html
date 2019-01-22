@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>回到顶部</title>
+    <style type="text/css">
+    .settled{
+        flex-direction: column;
+        align-items: flex-end;
+        position: fixed;
+        right: 100px;
+        bottom: 100px;
+        display: none;
+        text-align: right;
+    }
+    #toTop2{
+        height: 100px;
+        width: 30px;
+        border-style: none solid solid solid;
+        border-width: 1px;
+        text-align: center;
+        cursor:pointer;
+    }
+    #toTop2::before{
+        content: '';
+        display: block;
+        width:21.8px;
+        height:21.8px;
+        transform: rotate(45deg);
+        border:1px solid #000000;
+        border-right:0;
+        border-bottom:0;
+        position: absolute;
+        right: 4.5px;
+        top:-11px;
+    }
+    .backgroud{
+        width: 200px;
+        height: 10000px;
+        background: linear-gradient(red,orange,yellow,green,blue, indigo, purple, red,orange,yellow,green,blue, indigo, purple); /* 标准的语法 */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>向下滚动500px即可看到</h1>
+    </header>
+    <div class="backgroud"></div>
+    <div class="settled">
+        <div id="toTop2">
+            回到顶部
+        </div>
+        <p>使用requestAnimationFrame做的一个动画效果&nbsp;↑</p>
+        <p>通过a标签#回到顶部，或者window.scrollTo到指定位置，但比较生硬&nbsp;↓</p>
+        <div id="toTop1">
+            <a href=#>超链接方式回到顶部</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var top2=document.getElementById("toTop2")
+        var settled=document.getElementsByClassName("settled")
+        // debugger
+        window.onscroll=function(){
+            if(document.documentElement.scrollTop >= 500){ // 页面指定了DTD，即指定了DOCTYPE时，使用document.documentElement，没有指定时用document.body
+                settled[0].style.display='flex'
+            }else{
+                settled[0].style.display='none'
+            }
+        }
+        top2.onclick = function(){
+            (function smoothscroll(){
+                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 0) {
+                    window.requestAnimationFrame(smoothscroll);
+                    window.scrollTo (0,currentScroll - (currentScroll/5));
+                }
+            })();
+        }
+    </script>
+</body>
+</html>
