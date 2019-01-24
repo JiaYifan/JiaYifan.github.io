@@ -86,4 +86,4 @@ if (!window.cancelAnimationFrame) {
 
 现在分别使用setInterval、setTimeout和requestAnimationFrame这三个方法制作一个简单的进制度效果:
 
-<a href="docs/Html_CSS_JS/JS/三种进度条方式.html">三种进度条方式.html</a>
+<a href="docs/Foundational/JS/三种进度条方式.html">三种进度条方式.html</a>

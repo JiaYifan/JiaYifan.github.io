@@ -1,10 +1,6 @@
 # abstract
-* Html
-    * [标签介绍及其常用操作](/HTML_tag/select.md)
-* CSS
-    * 瀑布流
-    * Less
-    * Scss
+* DOM
+    * 从jquery的$(document).ready()来看DOM的加载过程
 * JS
     * 基础
       * 对象基础 
@@ -23,4 +19,9 @@
         * [发布—订阅模式](/JS/JavaScript设计模式——发布订阅模式.md)
     * [requestAnimationFrame](/JS/requestAnimationFrame.md)
     * [正则表达式](/JS/正则表达式.md)
-    
+* Html
+    * [标签介绍及其常用操作](/HTML_tag/select.md)
+* CSS
+    * 瀑布流
+    * Less
+    * Scss
