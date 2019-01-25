@@ -1,45 +1,3 @@
-<!-- <script src="assets/iview.min.js"></script>
-<link rel="stylesheet" href="assets/iview.css"> -->
-<!-- var iviewScript = document.createElement("script");
-iviewScript.src = "./assets/iview.min.js";
-document.head.appendChild( iviewScript ); -->
-<!-- iview直接引入会有些样式冲突，决定自己用vue写一个组件 -->
-<div id="app">
-    {{visible}}
-</div>
-
-<script type="text/javascript">
-// 因为vue在index.html引入会全局引入，不知为何会破坏自己写的script
-// 又因为docsify只解析第一个script，所以用这个办法引入vue
-var vueScript = document.createElement("script");
-vueScript.src = "./assets/vue.min.js";
-document.head.appendChild( vueScript );
-// 在document和所有子资源已完成加载时，上面的vue才引入进来
-var initApplication = function(){
-    new Vue({
-        el: '#app',
-        data: {
-            visible: '正在写作'
-        },
-        // components: {
-        //     'Tabs': Tabs
-        // },
-        methods: {
-            show: function () {
-                this.visible = true;
-            }
-        }
-    })
-}
-// 所以使用onreadystatechange方法监听document到哪个阶段了
-document.onreadystatechange = function () {
-    console.log(document.readyState) // 貌似只能捕获到complete，不知道为啥
-    if (document.readyState === "complete") {
-        initApplication();
-    }
-}
-</script>
-
 # JiaYifan.github.io
 JiaYifan's Blog
 
@@ -85,3 +43,46 @@ addEventListener() 方法可以指定 "useCapture" 参数来设置传递类型�
 
 addEventListener(event, function, useCapture);
 默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递。
+
+
+在导入vue后，会对自己写的一些样式和script有些冲突，主要是docsify只解析第一个script局限很大，经过努力还是放弃了。下面是不全局导入vue的一个办法，主要涉及知识点有：
+* onreadystatechange
+* appendChild
+
+```javascript
+<script src="assets/iview.min.js"></script>
+<link rel="stylesheet" href="assets/iview.css">
+
+<div id="app">
+    {{visible}}
+</div>
+
+<script type="text/javascript">
+// 因为vue在index.html引入会全局引入，不知为何会破坏自己写的script
+// 又因为<srcipt src>根本没效果，而且docsify只解析第一个script，所以用这个办法引入vue
+var vueScript = document.createElement("script");
+vueScript.src = "./assets/vue.min.js";
+document.head.appendChild( vueScript );
+// 在document和所有子资源已完成加载时，上面的vue才引入进来
+var initApplication = function(){
+    new Vue({
+        el: '#app',
+        data: {
+            visible: '正在写作'
+        },
+        methods: {
+            show: function () {
+                this.visible = true;
+            }
+        }
+    })
+}
+// 所以使用onreadystatechange方法监听document到哪个阶段了
+document.onreadystatechange = function () {
+    console.log(document.readyState) // 貌似只能捕获到complete，不知道为啥
+    if (document.readyState === "complete") {
+        initApplication();
+    }
+}
+</script>
+```

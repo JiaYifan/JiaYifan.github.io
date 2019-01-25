@@ -1,6 +1,7 @@
 # abstract
 * DOM
-    * 从jquery的$(document).ready()来看DOM的加载过程
+    * [什么是DOM](/DOM/什么是DOM.md)
+    * [从jquery的$(document).ready()来看文档的加载状态](/DOM/文档的加载状态.md)
 * JS
     * 基础
       * 对象基础 
