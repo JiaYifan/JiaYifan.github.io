@@ -1,0 +1,41 @@
+{
+    "name": "Vue 全家桶",
+    "children": [
+        {
+            "name": "Vue",
+            "children": [
+                {
+                    "name": "内部指令",
+                    "children": [
+                        {"name": "{{ }}"},
+                        {"name": "v-if v-else （判断是否加载，可以减轻服务器的压力，在需要时加载）"},
+                        {"name": "v-show （调整css dispaly属性，可以使客户端操作更加流畅）"},
+                        {"name": "v-for=\"item in items\""}
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Vue Router",
+            "children": [
+                {
+                    "name": "内部指令",
+                    "children": [
+                        {"name": "{{ }}"}
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "VueX",
+            "children": [
+                {
+                    "name": "内部指令",
+                    "children": [
+                        {"name": "{{ }}"}
+                    ]
+                }
+            ]
+        }
+    ]
+}

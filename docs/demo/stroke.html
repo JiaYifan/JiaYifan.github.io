@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    @font-face{
+        font-family: 'Bangers'; 
+        src: url('../assets/font/Bangers.ttf'),url('assets/font/Bangers.eot')/* IE9+ */; 
+    }
+    text{
+        font-size:200px; 
+        font-family:Bangers;
+        fill: none;
+    }
+    .orangeBorder {
+        stroke-linejoin:miter; /* miter | round | bevel | inherit */
+        stroke-width:10;
+        stroke:orange;
+    }
+</style>
+</head>
+<body>
+    <h1>关于字体边框的更多特效详见：</h1>
+    <a href="https://www.w3cplus.com/css3/text-stroke.html">https://www.w3cplus.com/css3/text-stroke.html</a>
+    <svg width="100%" height="399">
+        <text x="10" dy="200" class="orangeBorder" text-anchor="start">STROKE</text>
+        <text x="10" dy="200" text-anchor="start">STROKE</text>
+    </svg>
+</body>
+</html>
