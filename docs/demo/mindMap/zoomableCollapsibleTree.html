@@ -3,6 +3,7 @@
 1、417行d.y = (d.depth * 100);节点间y轴间距固定为100px
 2、463行nodeEnter.append("text")，每个节点增加了一个text，以形成外轮廓效果
 3、362行x = x * scale + viewerWidth / 10;根节点的位置左移
+4、120行去除排序
 -->
 
 <!DOCTYPE html>
@@ -117,7 +118,7 @@ treeJSON = d3.json(`${urlParam}.json`, function(error, treeData) {
         });
     }
     // Sort the tree initially incase the JSON isn't in a sorted order.
-    sortTree();
+    // sortTree();
 
     // TODO: Pan function, can be better implemented.
 

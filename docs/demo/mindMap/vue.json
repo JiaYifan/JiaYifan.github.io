@@ -5,12 +5,85 @@
             "name": "Vue",
             "children": [
                 {
+                    "name": "生命周期",
+                    "children": [
+                        {"name": "beforeCreate : 可以在这加个loading事件，在加载实例时触发"},
+                        {"name": "created : 初始化完成时的事件写在这里。例如在这结束loading事件，异步请求也适宜在这里调用"},
+                        {"name": "beforeMount"},
+                        {"name": "mounted : 挂载元素，获取到DOM节点"},
+                        {"name": "beforeUpdate : 如果对数据统一处理，在这里写上相应函数"},
+                        {"name": "updated : 如果对数据统一处理，在这里写上相应函数"},
+                        {"name": "beforeDestroy : 可以做一个确认停止事件的确认框"},
+                        {"name": "destroyed"}
+                    ]
+                },
+                {
                     "name": "内部指令",
                     "children": [
-                        {"name": "{{ }}"},
-                        {"name": "v-if v-else （判断是否加载，可以减轻服务器的压力，在需要时加载）"},
-                        {"name": "v-show （调整css dispaly属性，可以使客户端操作更加流畅）"},
-                        {"name": "v-for=\"item in items\""}
+                        {
+                            "name": "插值",
+                            "children": [
+                                {"name": "{{ }} （通过 v-once 指令，可执行一次性插值）"},
+                                {"name": "v-text （<span>{{ message }}</span>=<span v-text=\"message\"></span><br/>）"},
+                                {"name": "v-html （注意避免 XSS 攻击）"},
+                                {"name": "补充：上述3个指令可以支持 JavaScript 表达式"}
+                            ]
+                        },
+                        {
+                            "name": "计算属性和侦听器",
+                            "children": [
+                                {"name": "computed （计算属性是基于它们的依赖进行缓存的）"},
+                                {"name": "watch （当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。）"}
+                            ]
+                        },
+                        {
+                            "name": "Class 与 Style 绑定",
+                            "children": [
+                                {"name": "v-bind （响应式地更新 HTML 特性，缩写为\":\"，可绑定数组，也可返回计算属性）"},
+                                {"name": "绑定用于组件 （当在一个自定义组件上使用 class 属性时，这些类将被添加到该组件的根元素上面。这个元素上已经存在的类不会被覆盖。）"},
+                                {"name": "v-bind:style绑定内联样式 （可自动识别并添加前缀如-webkit-）"}
+                            ]
+                        },
+                        {
+                            "name": "条件渲染",
+                            "children": [
+                                {"name": "v-if v-else v-else-if （判断是否加载，可以减轻服务器的压力，在需要时加载）"},
+                                {"name": "用 key 管理可复用的元素 （切换登录方式但不用重新输入的效果，如果想使其独立，添加一个具有唯一值的 key 属性即可）"},
+                                {"name": "v-show （调整css dispaly属性，可以使客户端操作更加流畅；v-show 不支持 <template> 元素）"},
+                                {"name": "比较：v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。若要非常频繁地切换，则 v-show 较好；若在运行时条件很少改变，则使用 v-if 较好。"}
+                            ]
+                        },
+                        {
+                            "name": "列表渲染",
+                            "children": [
+                                {"name": "v-for=\"item in items\" （也可以item of items、(item, index) in items、(value, key, index) in object）"},
+                                {"name": "v-for=\"n in 10\" （重复多次模板）"},
+                                {"name": "key （用于跟踪每个节点的身份，从而重用和重新排序现有元素：v-for=\"item in items\" :key=\"item.id\"）"},
+                                {"name": "显示过滤/排序结果 （1、v-for和computed组合；2、v-for=\"n in method(numbers)\"）"},
+                                {"name": "数组更新检测 （没看懂……）"},
+                                {"name": "组件的 v-for （<my-component v-for=\"item in items\" :key=\"item.id\"></my-component>）"},
+                                {"name": "<template v-for=\"item in items\">"}
+                            ]
+                        },
+                        {
+                            "name": "事件处理",
+                            "children": [
+                                {"name": "v-on （监听DOM事件，缩写为@）"},
+                                {"name": "访问原始的 DOM 事件 （可用$event作为参数）"},
+                                {"name": "事件修饰符 （.stop.prevent.capture.self.once.passive）"},
+                                {"name": "按键修饰符 （keyup.keyCode.enter.tab.delete...）"},
+                                {"name": "系统修饰键 （.ctrl.alt.shift.meta）"},
+                                {"name": ".exact 修饰符 （控制由精确的系统修饰符组合触发的事件）"},
+                                {"name": "鼠标按钮修饰符 （.left.right.middle）"}
+                            ]
+                        },
+                        {
+                            "name": "表单输入绑定",
+                            "children": [
+                                {"name": "v-model （<input>、<textarea>、 <select>）"},
+                                {"name": "修饰符 （.lazy.number.trim）"}
+                            ]
+                        }
                     ]
                 }
             ]

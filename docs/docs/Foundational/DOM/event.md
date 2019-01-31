@@ -1,0 +1,1 @@
+在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。

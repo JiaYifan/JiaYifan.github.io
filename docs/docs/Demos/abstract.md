@@ -4,6 +4,7 @@
 ## H5动画特效
 * <a href="demo/progressBar.html">三种进度条实现方式</a>
 * <a href="demo/goToTop.html">回到顶部</a>
+* <a href="demo/borderEncircle.html">利用svg实现边框环绕动画</a>
 
 ## H5平面效果
 * <a href="demo/stroke.html">文本描边</a>
