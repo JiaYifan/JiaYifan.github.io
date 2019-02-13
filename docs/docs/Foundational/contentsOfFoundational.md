@@ -1,4 +1,4 @@
-# abstract
+# Table of Contents
 * DOM
   * [什么是DOM](/DOM/什么是DOM.md)
   * [从jquery的$(document).ready()来看文档的加载状态](/DOM/文档的加载状态.md)
@@ -12,6 +12,8 @@
       * [Object-oriented JavaScript](/JS/Object-oriented_JavaScript.md)
       * [Object prototypes](/JS/Object_prototypes.md)
       * [Inheritance in JavaScript](/JS/Inheritance.md)
+    * ES6
+      * [class](/JS/class.md)
     * [apply和call](/JS/apply和call.md)
     * 函数的几种写法
   * 设计模式
@@ -22,11 +24,11 @@
   * [requestAnimationFrame](/JS/requestAnimationFrame.md)
   * [正则表达式](/JS/正则表达式.md)
 * Html
-  * [标签介绍及其常用操作](/HTML_tag/select.md)
+  * [meta]((/HTML/meta.md))
+  * [History](/HTML/History.md)
+  * [标签介绍及其常用操作](/HTML/HTML_Tag.md)
+  * 
 * CSS
   * 瀑布流
   * Less
   * Scss
-* SVG
-  * [技巧](/SVG/)
-* 

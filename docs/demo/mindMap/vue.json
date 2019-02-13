@@ -85,18 +85,37 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "组件",
+                    "children": [
+                        {"name": "全局注册：Vue.component('my-component-name', { ... options ...})"},
+                        {"name": "局部注册：var定义或者在ES6中import"},
+                        {"name": "组件中 data 必须是一个函数"},
+                        {"name": "props：父传子"},
+                        {"name": "$emit：子传父，父组件的v-on监听$emit第一个参数注册的事件，$event获取$emit第二个参数的值；若父组件v-on绑定了一个方法，则该方法的参数就是$emit第二个参数"},
+                        {"name": "组件上使用 v-model时，将其 value 绑定到名叫 value 的 prop 上，在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出"},
+                        {"name": "<slot>插槽（父组件向子组件里插入html代码）"},
+                        {"name": "动态组件（<component v-bind:is=\"currentTabComponent\"></component>）"},
+                        {"name": "<keep-alive>将动态组件包裹起来，可以保持组件的状态，避免反复重渲染"},
+                        {"name": ".sync 修饰符（相当于双向绑定父子组件的两个值）"},
+                        {"name": "异步组件（需要时才从服务器加载相关模块）"}
+                    ]
+                },
+                {
+                    "name": "过渡 & 动画",
+                    "children": [
+                        {"name": "全局注册：Vue.component('my-component-name', { ... options ...})"},
+                        {"name": "局部注册：var定义或者在ES6中import"}
+                    ]
                 }
             ]
         },
         {
             "name": "Vue Router",
             "children": [
-                {
-                    "name": "内部指令",
-                    "children": [
-                        {"name": "{{ }}"}
-                    ]
-                }
+                {"name": "1、import；2、Vue.use(Router)；3、配置路由"},
+                {"name": "<router-link to=\"/\"></router-link>"}
             ]
         },
         {
