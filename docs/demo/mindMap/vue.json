@@ -115,7 +115,16 @@
             "name": "Vue Router",
             "children": [
                 {"name": "1、import；2、Vue.use(Router)；3、配置路由"},
-                {"name": "<router-link to=\"/\"></router-link>"}
+                {"name": "<router-link to=\"/\"></router-link>"},
+                {"name": "<router-view></router-view>"},
+                {"name": "编程式导航：this.$router.push(+1-1); this.$router.push()"},
+                {"name": "children"},
+                {"name": "传参（1、<router-link :to=\"{name:'路由表中的name',params:{key:value}}\">；2、路由表中配置path:'/params/:key/:key',value在url中。对于上述两种方法子组件都用$route.params.获取）"},
+                {"name": "redirect、alias"},
+                {"name": "transition"},
+                {"name": "mode:history|hash"},
+                {"name": "404:path:\"*\",component:Error"},
+                {"name": "钩子函数：路由中：beforeEnter(to,from,next()；组件中：beforeRouteEnter、beforeRouteLeave"}
             ]
         },
         {
