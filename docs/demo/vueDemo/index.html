@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vueDemo</title>
+    <script src="../../assets/vue.min.js"></script>
+    <script src="../../assets/vue-router.js"></script>
+    <script src="../../assets/vuex.js"></script>
+    <link href="components/jyfbutton.css" rel="stylesheet" type="text/css" />
+    <script src="components/jyfbutton.js"></script>
+    <link href="components/jyfheader.css" rel="stylesheet" type="text/css" />
+    <script src="components/step.js"></script>
+    <style type="text/css">
+        .title{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .content{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div id="vueApp">
+        <h1 class="title">{{title}}</h1>
+        <hr>
+        <h2 class="title">组件</h2>
+        <div class="content">
+            <button-counter></button-counter>
+            <jyf-button
+                :value="buttonvalue"
+                type="danger"
+            ></jyf-button>
+            <jyf-button
+                value="点我"
+                type="success"
+            ></jyf-button>
+            <jyf-header></jyf-header>
+        </div>
+        <hr>
+        <h2 class="title">vue-router</h2>
+        <h4>vue-router使用四部曲：</h4>
+        <router-link to="/step0">step0</router-link>
+        <router-link to="/step1">step1</router-link>
+        <router-link to="/step2">step2</router-link>
+        <router-link to="/step3">step3</router-link>
+        <router-link to="/step4">step4</router-link>
+        <router-view></router-view>
+        <hr>
+        <h2 class="title">vuex</h2>
+        <h4>{{store.state.count}}</h4>
+        <button v-on:click="add">+</button>
+        <hr>
+    </div>
+    <script type="text/template" id="jyfheader">
+    <!-- 也可以把这个script标签改成template标签 -->
+        <div>
+            <h3>使用script type="text/template"定义的组件</h3>
+            <div class="header">
+                <div class="left">
+
+                </div>
+                <div class="center">
+                    小程序
+                </div>
+                <div class="right">
+                    <svg>
+                        <line x1="10px" y1="10px" x2="30px" y2="30px" style="stroke:black;stroke-width:2"/>
+                        <line x1="30px" y1="10px" x2="10px" y2="30px" style="stroke:black;stroke-width:2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        Vue.component('button-counter', {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: '<div><h3>全局注册的组件</h3><br><button v-on:click="count++">You clicked me {{ count }} times.</button></div>'
+        })
+        Vue.component('jyf-header', {
+            template: '#jyfheader'
+        });
+        const routes = [
+            { path: '/step0', component: step0 },
+            { path: '/step1', component: step1 },
+            { path: '/step2', component: step2 },
+            { path: '/step3', component: step3 },
+            { path: '/step4', component: step4 }
+        ]
+        const router = new VueRouter({
+            routes // (缩写) 相当于 routes: routes
+        })
+        const store = new Vuex.Store({
+            state: {
+                count: 0
+            },
+            mutations: {
+                increment (state) {
+                state.count++
+                }
+            }
+        })
+        new Vue({
+            el:"#vueApp",
+            data:{
+                title:'hello VUE',
+                buttonvalue:'clickme'
+            },
+            components:{
+                "jyf-button":jyfbutton
+            },
+            methods:{
+                add(){
+                    store.commit('increment')
+                }
+            },
+            router
+        })
+    </script>
+</body>
+</html>

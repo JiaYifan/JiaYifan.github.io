@@ -1,0 +1,12 @@
+.jyfbutton{
+    height: 40px;
+    width: 100px;
+    border:1px solid gray;
+    border-radius: 10px;
+}
+.danger{
+    background-color: red;   
+}
+.success{
+    background-color: greenyellow;   
+}

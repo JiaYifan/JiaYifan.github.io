@@ -2,6 +2,8 @@
 
 <a href="demo/mindMap/zoomableCollapsibleTree.html?vue">Vue 2.0 + Vue Router + Vuex 思维导图</a>
 
+<a href="demo/vueDemo/index.html">不使用webpack和Babel的Demo</a>
+
 ## 面试题
 
 **VUE 生命周期**

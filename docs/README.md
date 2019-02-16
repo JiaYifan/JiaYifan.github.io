@@ -141,7 +141,6 @@ class Demo extends React.Component {
     }
 ```
 
-
 !> React父子组件传值
 
 !> redux的使用
