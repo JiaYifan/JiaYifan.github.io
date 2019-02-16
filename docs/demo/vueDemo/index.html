@@ -13,10 +13,10 @@
     <link href="components/jyfheader.css" rel="stylesheet" type="text/css" />
     <script src="components/step.js"></script>
     <style type="text/css">
-        .title{
+        .center{
             display: flex;
-            width: 100%;
-            justify-content: center;
+            flex-flow: column;
+            align-items: center;
         }
         .content{
             display: flex;
@@ -27,9 +27,9 @@
 </head>
 <body>
     <div id="vueApp">
-        <h1 class="title">{{title}}</h1>
+        <h1 class="center">{{title}}</h1>
         <hr>
-        <h2 class="title">组件</h2>
+        <h2 class="center">组件</h2>
         <div class="content">
             <button-counter></button-counter>
             <jyf-button
@@ -43,7 +43,7 @@
             <jyf-header></jyf-header>
         </div>
         <hr>
-        <h2 class="title">vue-router</h2>
+        <h2 class="center">vue-router</h2>
         <h4>vue-router使用四部曲：</h4>
         <router-link to="/step0">step0</router-link>
         <router-link to="/step1">step1</router-link>
@@ -52,9 +52,11 @@
         <router-link to="/step4">step4</router-link>
         <router-view></router-view>
         <hr>
-        <h2 class="title">vuex</h2>
-        <h4>{{store.state.count}}</h4>
-        <button v-on:click="add">+</button>
+        <div class="center">
+            <h2>vuex</h2>
+            <h4>{{store.state.count}}</h4>
+            <button v-on:click="add">+</button>
+        </div>
         <hr>
     </div>
     <script type="text/template" id="jyfheader">
@@ -105,7 +107,7 @@
             },
             mutations: {
                 increment (state) {
-                state.count++
+                    state.count++
                 }
             }
         })
