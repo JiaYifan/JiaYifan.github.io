@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
+  componentWillMount(){
+      console.log('componentWillMount')
+  }
   render() {
+    console.log('render')
     return (
       <div className="App">
         <header className="App-header">
@@ -22,6 +26,18 @@ class App extends Component {
         </header>
       </div>
     );
+  }
+  componentDidMount(){
+    console.log('componentDidMount')
+  }
+  componentWillUpdate(){
+      console.log('componentWillUpdate')
+  }
+  componentDidUpdate(){
+      console.log('componentDidUpdate')
+  }
+  componentWillUnmount(){
+      console.log('componentWillUnmount')
   }
 }
 

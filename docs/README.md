@@ -203,6 +203,9 @@ addEventListener() 方法可以指定 "useCapture" 参数来设置传递类型�
 addEventListener(event, function, useCapture);
 默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递。
 
+preventDefault
+stopPropagation
+https://blog.csdn.net/magic__man/article/details/51782523
 
 在导入vue后，会对自己写的一些样式和script有些冲突，主要是docsify只解析第一个script局限很大，经过努力还是放弃了。下面是不全局导入vue的一个办法，主要涉及知识点有：
 * onreadystatechange
