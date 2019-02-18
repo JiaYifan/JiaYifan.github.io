@@ -148,17 +148,127 @@ class Demo extends React.Component {
 !> 共用组件封装
 
 !> webpack中引用哪些插件，怎样自己写loader
+css-loader 处理css中路径引用等问题
+style-loader 动态把样式写入html
+sass-loader scss编译器
+less-loader less编译器
+postcss-loader css再处理，可以实现css自动补全等功能，但要安装相应的插件和进行相应的配置
+babel-loader
+jsx-loader
+url-loader图片处理
+```javascript
+{
+    test:/\.(jpg|png)$/,
+    loaders:'url-loader?limit=8192'
+}
+```
+
 
 !> settimeout事件处理机制，会打印出什么值，var函数声明提前（变量提升）
 
 !> 怎样让未知宽高的元素居中（要考虑兼容性）？不用flex和transform？
+css/css3实现未知宽高元素的垂直居中和水平居中
+其实在平常的一些布局中也经常有要实现元素的垂直居中和水平居中的的需要，下面来写几种css/css3实现的未知宽高元素的水平和垂直居中的写法
+
+ps：不考虑兼容问题（下次会写js实现元素的水平and垂直居中 ）
+
+第一种 css3的transform
+
+复制代码
+.ele{
+/*设置元素绝对定位*/
+    position:absolute;
+/*top 50%*/
+    top: 50%;
+/*left 50%*/
+    left: 50%;
+/*css3   transform 实现*/
+    transform: translate(-50%, -50%);
+}
+复制代码
+第二种 flex盒子布局
+
+复制代码
+.ele{
+/*弹性盒模型*/    
+    display:flex;
+/*主轴居中对齐*/
+    justify-content: center;
+/*侧轴居中对齐*/    
+    align-items: center;  
+ }
+复制代码
+第三种 display的table-cell  
+
+复制代码
+.box{
+/*让元素渲染为表格单元格*/
+    display:table-cell;
+/*设置文本水平居中*/
+    text-align:center; 
+/*设置文本垂直居中*/
+    vertical-align:middle;     
+} 
+复制代码
+第三种是给父级添加样式。先写这几种， 够大家用了，还有通过伪类实现居中的效果，有兴趣的可以自己敲下试试
+
 
 !> 对于表单页面如何配置，让其可复用，考虑到级联事件
+可以定义表单元素的onchange事件，用bind进行绑定当前上下文，传入表单的name，然后onchange事件里将值写入state，或者不用bind，react在event.target里会提供name以供复用
+
 
 !> 关注哪些新技术，知不知道react17.6
 
 !> 移动端布局方式，当前选取的rem值怎么用sass计算或者用webpack打包时处理？
 
+根据rem的使用原理，可以知道px转rem需要在html根元素设置一个font-size值，因为rem是相对于html根元素。
+
+方法一、Sass中@function中rem转px
+
+```css
+$browser-default-font-size: 16px !default;//变量的值可以根据自己需求定义
+
+html {
+    font-size: $browser-default-font-size;
+}
+
+@function pxTorem($px){//$px为需要转换的字号
+    @return $px / $browser-default-font-size * 1rem;
+}
+```
+
+定义好@function之后，实际使用中就简单多了：
+
+```css
+//SCSS
+html {
+    font-size: $browser-default-font-size;
+}
+.header {
+    font-size: pxTorem(12px);
+}
+
+//CSS
+html {
+  font-size: 16px; }
+
+.header {
+  font-size: 0.75rem; }
+```
+
+webpack可以安装postcss
+安装postcss-px-to-viewport，设置我们设计稿的宽高，指定需要转换成的视窗单位（建议用vw）等一些配置，就可以把我们的px按百分比转化成vw
+```javascript
+      "postcss-px-to-viewport": {
+        viewportWidth: 750,  //视窗的宽度，对应的是我们设计稿的宽度，一般是750
+        viewportHeight: 1334, // 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置
+        unitPrecision: 3,       // 指定`px`转换为视窗单位值的小数位数（很多时候无法整除）
+        viewportUnit: ‘vw‘,     // 指定需要转换成的视窗单位，建议使用vw
+        selectorBlackList: [‘.ignore‘, ‘.hairlines‘],  // 指定不转换为视窗单位的类，可以自定义，可以无限添加,建议定义一至两个通用的类名
+        minPixelValue: 1,       // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
+        mediaQuery: false       // 允许在媒体查询中转换`px`
+      }, 
+```
 
 该背的还是要背
 一些demo

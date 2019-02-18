@@ -117,7 +117,7 @@
                 {"name": "0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)；1. 定义 (路由) 组件；2. 定义路由；3. 创建 router 实例，然后传 `routes` 配置；4. 创建和挂载根实例"},
                 {"name": "<router-link to=\"/\"></router-link>"},
                 {"name": "<router-view></router-view>"},
-                {"name": "编程式导航：this.$router.push(+1-1); this.$router.push()"},
+                {"name": "编程式导航：this.$router.go(+1-1); this.$router.push('/xxx')"},
                 {"name": "children"},
                 {"name": "传参（1、<router-link :to=\"{name:'路由表中的name',params:{key:value}}\">；2、路由表中配置path:'/params/:key/:key',value在url中。对于上述两种方法子组件都用$route.params.获取）"},
                 {"name": "redirect、alias"},

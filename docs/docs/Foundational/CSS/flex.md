@@ -1,9 +1,14 @@
 
 > 在css中看到flex:1表示什么
 
-首先明确一点是， `flex` 是 `flex-grow`、`flex-shrink`、`flex-basis`的缩写。故其取值可以考虑以下情况：
+首先明确一点是， `flex` 是 `flex-grow`、`flex-shrink`、`flex-basis`的缩写。
 
-`flex` 的默认值是以上三个属性值的组合。假设以上三个属性同样取默认值，则 `flex` 的默认值是 `0 1 auto`。同理，如下是等同的：
+* grow：[groʊ]增加; 扩大; 扩展;
+* shrink：[ʃrɪŋk]收缩;
+
+`flex` 的默认值是以上三个属性值的组合，故其取值可以考虑以下情况：
+
+假设以上三个属性同样取默认值，则 `flex` 的默认值是 `0 1 auto`。同理，如下是等同的：
 ```css
 .item {flex: 2333 3222 234px;}
 .item {

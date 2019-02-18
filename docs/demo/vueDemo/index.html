@@ -49,7 +49,8 @@
         <router-link to="/step1">step1</router-link>
         <router-link to="/step2">step2</router-link>
         <router-link to="/step3">step3</router-link>
-        <router-link to="/step4">step4</router-link>
+        <a href="/" @click="jump('/step4',$event)">step4（我和前面不一样，我是一个a标签，使用了preventDefault和编程式导航）</a>
+        <!-- <router-link to="/step4">step4</router-link> -->
         <router-view></router-view>
         <hr>
         <div class="center">
@@ -123,6 +124,10 @@
             methods:{
                 add(){
                     store.commit('increment')
+                },
+                jump(to,event){
+                    event.preventDefault()
+                    this.$router.push(to)
                 }
             },
             router

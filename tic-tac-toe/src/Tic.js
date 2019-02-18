@@ -63,8 +63,14 @@ class Board extends React.Component {
             />
         ) 
     }
-
+    componentWillMount(){
+        console.log('componentWillMount')
+    }
+    componentWillReceiveProps(){
+        console.log('componentWillReceiveProps')
+    }
     render() {
+        console.log('render')
         const winner = calculateWinner(this.state.squares)
         let status
         if (winner) {
@@ -93,11 +99,21 @@ class Board extends React.Component {
         </div>
         );
     }
-
+    componentDidMount(){
+        console.log('componentDidMount')
+    }
+    shouldComponentUpdate(){
+        console.log('shouldComponentUpdate')
+        return true
+    }
+    componentWillUpdate(){
+        console.log('componentWillUpdate')
+    }
     componentDidUpdate(){
-        if(winner){
-            alert(`恭喜${winner}方胜利`)
-        }
+        console.log('componentDidUpdate')
+    }
+    componentWillUnmount(){
+        console.log('componentWillUnmount')
     }
 }
 
