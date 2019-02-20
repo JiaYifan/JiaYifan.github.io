@@ -9,8 +9,7 @@
     * [Contents](docs/Foundational/contentsOfFoundational.md)
     * [ES6+](docs/Foundational/ES6+.md)
     * [HTML5](docs/Foundational/HTML5.md)
-    * [less](docs/Foundational/less.md)
-    * [flex](docs/Foundational/flex.md)
+    * [CSS](docs/Foundational/less.md)
 * Computer Network
     * [Computer Network basics](docs/Computer_Network/Computer_Network_basics.md)
     * [HTTPS](docs/Computer_Network/HTTPS.md)

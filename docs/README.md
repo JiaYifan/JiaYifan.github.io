@@ -1,6 +1,8 @@
 # JiaYifan.github.io
 JiaYifan's Blog
 
+<a href="docs/JavaScript.svg">知识图谱</a>
+
 !> React的生命周期
 
 > 生命周期：一个组件在不同的时期会调用不同时期的函数接口（也就是对应的生命周期函数）
