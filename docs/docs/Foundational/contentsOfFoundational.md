@@ -31,7 +31,11 @@
 * CSS
   * [CSS属性](/CSS/CSS属性.md)
   * [Flex](/CSS/flex.md)
-  * 瀑布流
+  * 布局
+    * 瀑布流
+    * 三列布局
+    * 品字布局
+    * 居中
   * Less
   * Scss
   * [常考面试题](/CSS/50Q.md)

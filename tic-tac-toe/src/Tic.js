@@ -1,4 +1,5 @@
 import React from 'react';
+import MyAlert from './component/myAlert'
 import './css/Tic.css';
 
 class Square extends React.Component {
@@ -13,7 +14,6 @@ class Square extends React.Component {
     }
 }
 
-let winner = null
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -28,7 +28,6 @@ function calculateWinner(squares) {
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            winner = squares[a]
             return squares[a]
         }
     }
@@ -46,6 +45,7 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
+        const winner = calculateWinner(this.state.squares)
         if(winner || squares[i]){
             return
         }
@@ -53,6 +53,12 @@ class Board extends React.Component {
         this.setState({
             squares:squares,
             xIsNext:!this.state.xIsNext
+        })
+    }
+    newGame() {
+        this.setState({
+            squares: Array(9).fill(null),
+            xIsNext: true,
         })
     }
     renderSquare(i) {
@@ -72,6 +78,10 @@ class Board extends React.Component {
     render() {
         console.log('render')
         const winner = calculateWinner(this.state.squares)
+        let nowinner = false
+        if (this.state.squares.indexOf(null) === -1 && !winner) {
+            nowinner = true
+        }
         let status
         if (winner) {
             status = 'Winner: ' + winner
@@ -80,6 +90,14 @@ class Board extends React.Component {
         }
         return (
         <div>
+            {winner ? <MyAlert 
+                alert = {status}
+                onClick={()=>this.newGame()}
+            />:null}
+            {nowinner ? <MyAlert 
+                alert = 'no winner'
+                onClick={()=>this.newGame()}
+            />:null}
             <div className="status">{status}</div>
             <div className="board-row">
             {this.renderSquare(0)}
