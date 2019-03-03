@@ -20,8 +20,10 @@
     * [闭包](/JS/闭包.md)
     * [回调函数](/JS/callback.md)
     * [柯里化](/JS/currying.md)
-    * [单例模式](/JS/单例模式.md)
-    * [发布—订阅模式](/JS/JavaScript设计模式——发布订阅模式.md)
+    * [单例模式](/JS/设计模式-单例模式.md)
+    * [工厂模式](/JS/设计模式-工厂模式.md)
+    * [适配器模式](/JS/设计模式-适配器模式.md)
+    * [发布—订阅模式](/JS/设计模式-发布订阅模式.md)
   * [requestAnimationFrame](/JS/requestAnimationFrame.md)
   * [正则表达式](/JS/正则表达式.md)
 * Html
