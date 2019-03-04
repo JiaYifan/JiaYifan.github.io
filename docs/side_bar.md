@@ -1,4 +1,7 @@
 * [**Demos**](docs/Demos/abstract.md)
+* Algorithm
+    * [其他算法题](docs/Algorithm/Algorithm.md)
+    * [letCode](docs/Algorithm/letCode.md)
 * Framework
     * [React](docs/Framework/React.md)
     * [VUE](docs/Framework/VUE.md)
