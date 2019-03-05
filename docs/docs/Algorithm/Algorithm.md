@@ -172,3 +172,10 @@ console.log(c)
 ## 节流
 
 
+<script type="text/javascript">
+const allanchor = document.querySelectorAll(".anchor");
+console.log(allanchor)
+allanchor.forEach((e)=>{
+    
+})
+</script>

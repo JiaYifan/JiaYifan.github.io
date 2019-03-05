@@ -8,10 +8,10 @@
     * [webpack](docs/Framework/webpack.md)
     * [D3.js](docs/Framework/D3.md)
 * Foundational But Essential
-    * [Contents](docs/Foundational/contentsOfFoundational.md)
-    * [ES6+](docs/Foundational/ES6+.md)
-    * [HTML5](docs/Foundational/HTML5.md)
-    * [CSS](docs/Foundational/less.md)
+    * [DOM](/DOM/contentsOfDOM.md)
+    * [JavaScript](/JS/contentsOfJS.md)
+    * [HTML](/HTML/contentsOfHtml.md)
+    * [CSS](/CSS/contentsOfCSS.md)
 * Computer Network
     * [Contents](docs/Computer_Network/ContentsOfCN.md)
 * Reading Notes
