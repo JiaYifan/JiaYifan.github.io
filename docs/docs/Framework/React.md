@@ -3,11 +3,12 @@ React 是一个采用声明式，高效而且灵活的用来构建用户界面�
 
 <a href="demo/reactDemo/index.html">不使用webpack、Babel、JSX的Demo</a>
 <a href="../tic-tac-toe/build/index.html">使用create react app做的Demo</a>
+
 ## React特点
 
-* 虚拟DOM: React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。
-组件化： React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。
-单项数据流：React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于单向的数据流动-从父节点传递到子节点。（使用ReactLink也可以实现双向绑定，但不建议使用）
+* 虚拟DOM：React也是以数据驱动的，每次数据变化React都会扫码整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。
+* 组件化：React可以从功能角度横向划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立。
+* 单项数据流：React设计者认为数据双向绑定虽然便捷，但在复杂场景下副作用也是很明显，所以React更倾向于**单向的数据流动-从父节点传递到子节点**。（使用ReactLink也可以实现双向绑定，但不建议使用）
 
 注意到我们在写代码的时候，在各个属性直接换了行，这样可以改善我们代码的可读性。并且我们在 JSX 元素的最外层套上了一小括号，以防止 JavaScript 代码在解析时自动在换行处添加分号。
 
@@ -104,3 +105,13 @@ keys 是什么帮助 React 跟踪哪些项目已更改、添加或从列表中�
 |class|className|
 |onclick|onClick|
 |for|htmlFor|
+
+## Redux
+
+[https://www.jianshu.com/p/e984206553c2](https://www.jianshu.com/p/e984206553c2)
+
+在React中，数据在组件中是单向流动的，数据从一个方向父组件流向子组件（通过props），所以，两个非父子组件之间通信就相对麻烦，redux的出现就是为了解决state里面的数据问题
+
+Redux是将整个应用状态存储到一个地方上称为store，里面保存着一个**状态树store tree**,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。
+
+
