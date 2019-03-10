@@ -1,3 +1,7 @@
+<div id="content">
+    <h1>目录</h1>
+</div>
+
 ## 为什么 0.1 + 0.2 != 0.3？如何解决这个问题？
 
 > JS 的 `number` 类型是浮点类型，而 JS 采用 IEEE 754 双精度版本（64位），所以在计算小数运算时，会先将十进制的小数换算到对应的二进制，一部分小数并不能完整的换算为二进制，因此出现了误差。
@@ -172,10 +176,17 @@ console.log(c)
 ## 节流
 
 
-<script type="text/javascript">
-const allanchor = document.querySelectorAll(".anchor");
-console.log(allanchor)
-allanchor.forEach((e)=>{
-    
-})
+<link rel="stylesheet" href="assets/content.css">
+
+<script type="text/javascript"> 
+    const allanchor = document.querySelectorAll(".anchor");
+    let content = document.createElement("div")
+    allanchor.forEach((e,i)=>{
+        let a = document.createElement("a")
+        a.href = e.href
+        // a.innerHTML = e.children[0].innerHTML
+        a.innerHTML = e.innerHTML
+        content.append(a)
+    })
+    document.getElementById("content").append(content)
 </script>

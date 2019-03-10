@@ -8,15 +8,15 @@
     * [webpack](docs/Framework/webpack.md)
     * [D3.js](docs/Framework/D3.md)
 * Foundational But Essential
-    * [DOM](/DOM/contentsOfDOM.md)
-    * [JavaScript](/JS/contentsOfJS.md)
-    * [HTML](/HTML/contentsOfHtml.md)
-    * [CSS](/CSS/contentsOfCSS.md)
+    * [DOM](docs/Foundational/contentsOfDOM.md)
+    * [JavaScript](docs/Foundational/contentsOfJS.md)
+    * [HTML](docs/Foundational/contentsOfHtml.md)
+    * [CSS](docs/Foundational/contentsOfCSS.md)
 * Computer Network
     * [Contents](docs/Computer_Network/ContentsOfCN.md)
 * Reading Notes
     * [JavaScript语言精粹](docs/Reading_Notes/JavaScript_The_Good_Parts.md)
-    <!-- * [掘金-前端面试之道](docs/Reading_Notes/掘金-前端面试之道.md) -->
+    * [掘金-前端面试之道](docs/Reading_Notes/掘金-前端面试之道.md)
     * [面试题](docs/Reading_Notes/面试题.md)
 * Other
     * [Git](docs/Other/Git.md)

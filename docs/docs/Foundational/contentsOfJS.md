@@ -9,6 +9,8 @@
     * [Inheritance in JavaScript](/JS/Inheritance.md)
   * ES6
     * [class](/JS/class.md)
+    * [Promise](/JS/Promise.md)
+    * [AbortablePromise: Aborting a fetch](/JS/AbortablePromise.md)
   * [apply和call](/JS/apply和call.md)
   * 函数的几种写法
 * 设计模式

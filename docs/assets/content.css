@@ -1,0 +1,16 @@
+#content span{
+    display: block;
+    margin: 8px 20px;
+    position: relative;
+}
+#content a::before{
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    transform: translate(0,50%);
+    border-left: 10px solid #006600;
+    border-top: 5px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 5px solid transparent;
+}

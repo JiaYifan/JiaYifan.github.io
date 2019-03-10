@@ -1,7 +1,7 @@
-# React
-React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。
+> React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。
 
 <a href="demo/reactDemo/index.html">不使用webpack、Babel、JSX的Demo</a>
+
 <a href="../tic-tac-toe/build/index.html">使用create react app做的Demo</a>
 
 ## React特点
@@ -114,4 +114,22 @@ keys 是什么帮助 React 跟踪哪些项目已更改、添加或从列表中�
 
 Redux是将整个应用状态存储到一个地方上称为store，里面保存着一个**状态树store tree**,组件可以派发(dispatch)行为(action)给store,而不是直接通知其他组件，组件内部通过订阅store中的状态state来刷新自己的视图。
 
+React 只是 DOM 的一个抽象层，并不是 Web 应用的完整解决方案。有两个方面，它没涉及。
+
+#### 你可能不需要 Redux
+
+* 如果你不知道是否需要 Redux，那就是不需要它。
+
+* 以下情况不需要 Redux：
+  * 用户的使用方式非常简单
+  * 用户之间没有协作
+  * 不需要与服务器大量交互，也没有使用 WebSocket
+  * 视图层（View）只从单一来源获取数据
+
+* 以下情况需要 Redux：
+  * 用户的使用方式复杂
+  * 不同身份的用户有不同的使用方式（比如普通用户和管理员）
+  * 多个用户之间可以协作
+  * 与服务器大量交互，或者使用了WebSocket
+  * View要从多个来源获取数据
 
