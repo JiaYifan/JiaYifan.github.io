@@ -13,6 +13,8 @@ export default () => {
 
 # 格式化
 
+> https://juejin.cn/post/7140940463359393805
+
 一般来说，右键格式化即可，如果想自动格式化
 
 ```
@@ -64,4 +66,24 @@ z: { a: 1 },
       onMount={handleEditorDidMount}
     />
   </div>
+```
+
+# 如何高亮
+
+```
+function handleEditorDidMount(
+  editor: monaco.editor.IStandaloneCodeEditor,
+  monaco: Monaco,
+) {
+  const options = {
+    range: new monaco.Range(2, 1, 4, 1),
+    options: {
+      isWholeLine: true,
+      className: 'highlight',
+    },
+  };
+  // 下面两种办法都行
+  // editor.deltaDecorations([], [options]);
+  editor.createDecorationsCollection([options]);
+}
 ```
